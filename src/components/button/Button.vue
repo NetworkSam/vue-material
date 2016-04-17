@@ -23,6 +23,7 @@
   import fn from '../../util/fn'
   import mRipple from '../Ripple.vue'
   import themeManager from '../../styles/theme-manager'
+  
   let muiTheme = themeManager.getTheme()
   let buttonFilterColor = 'rgb(153, 153, 153)'
   let {log} = fn
@@ -55,6 +56,7 @@
   }, {
     link: true
   }).attach()
+  
   export default {
     props: {
       /**

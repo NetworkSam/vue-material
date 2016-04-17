@@ -18,4 +18,3 @@ Vue.directive('ripple', {
 //    }
   }
 })
-

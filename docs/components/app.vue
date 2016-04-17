@@ -18,10 +18,8 @@
           <li class="first">
             <div>Components</div>
             <ul>
-              <li class="second active">
-                <div>
-                  <a href="#/components/button">Button</a>
-                </div>
+              <li v-for="item in items"  v-bind:class="{ 'second': item.isSecond, 'active': item.isActive}" v-on:click="active($index)">
+                  <a href="{{ item.href }}">{{ item.name }}</a>
               </li>
             </ul>
           </li>
@@ -33,11 +31,38 @@
     </div>
   </div>
 </template>
-
 <script>
+  /**
+  * @author samuel 作者
+  * @time 2016/04/17 23:20 时间
+  * @version 1.0 版本
+  */
   export default{
     data () {
-      return {}
+      return {
+        items: [
+          {
+            href: '#/components/button',
+            isSecond: true,
+            isActive: true,
+            name: 'Button'
+          },
+          {
+            href: '#/components/calendar',
+            isSecond: true,
+            isActive: false,
+            name: 'Calendar'
+          }
+        ]
+      }
+    },
+    methods: {
+      active ($index) {
+        this.items.forEach((item, index) => {
+          item.isActive = false
+        })
+        this.items[$index].isActive = true
+      }
     },
     components: {}
   }
