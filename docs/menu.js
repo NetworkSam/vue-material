@@ -22,6 +22,10 @@ export default [
       {
         name: 'Popover',
         path: '/components/popover'
+      },
+      {
+        name: 'Calendar',
+        path: '/components/Calendar'
       }
     ]
   }
